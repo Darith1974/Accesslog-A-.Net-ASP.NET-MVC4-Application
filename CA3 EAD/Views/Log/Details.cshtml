@@ -1,0 +1,36 @@
+﻿@model CA3_EAD.Models.Log
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Log</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Employee.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnterDateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnterDateTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaveDateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaveDateTime)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.LogId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,39 @@
+﻿<!-- This view corresponds to view attributed to the details action of the CompanyPosition controller when clicked from the
+default index view.
+-->
+@model CA3_EAD.Models.CompanyPosition
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CompanyPosition</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.JobDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JobDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Salary)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Salary)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.GradeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿
+<!-- This is the default view for the company Position web page. It displays a table showing all the contents 
+of the table. the page has various buttons describled by the action link statements below. Each statement will
+pass execution to the relevant controller such as Edit, details etc passing a new item.GradeID object
+-->
+@model IEnumerable<CA3_EAD.Models.CompanyPosition>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GradeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GradeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GradeID })
+        </td>
+    </tr>
+}
+
+</table>

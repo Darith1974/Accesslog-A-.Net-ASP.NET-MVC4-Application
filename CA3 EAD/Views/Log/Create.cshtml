@@ -1,0 +1,51 @@
+﻿@model CA3_EAD.Models.Log
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Log</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeeId, "Employee")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EmployeeId", String.Empty)
+            @Html.ValidationMessageFor(model => model.EmployeeId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EnterDateTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EnterDateTime)
+            @Html.ValidationMessageFor(model => model.EnterDateTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LeaveDateTime)
+        </div>
+        <div class="editor-field">
+            <!--@Html.EditorFor(model => model.LeaveDateTime)
+            @Html.ValidationMessageFor(model => model.LeaveDateTime)-->
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
